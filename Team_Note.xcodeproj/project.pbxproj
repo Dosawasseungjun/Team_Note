@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B544560829E8F3EF00A2D678 /* CHT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B544560729E8F3EF00A2D678 /* CHT.cpp */; };
+		B544560A29E8F40700A2D678 /* Mex 구하기.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B544560929E8F40700A2D678 /* Mex 구하기.cpp */; };
 		B548A99529E3CAA80070F3F2 /* HLD_heavyLightDecomposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B548A99129E3BB920070F3F2 /* HLD_heavyLightDecomposition.cpp */; };
 		B5EDA05D29E10BF600DE784D /* 좌표압축과 순열사이클 분할.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5EDA05C29E10BF600DE784D /* 좌표압축과 순열사이클 분할.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B544560729E8F3EF00A2D678 /* CHT.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CHT.cpp; sourceTree = "<group>"; };
+		B544560929E8F40700A2D678 /* Mex 구하기.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Mex 구하기.cpp"; sourceTree = "<group>"; };
 		B548A99129E3BB920070F3F2 /* HLD_heavyLightDecomposition.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HLD_heavyLightDecomposition.cpp; sourceTree = "<group>"; };
 		B5EDA05229E1062400DE784D /* Team_Note */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Team_Note; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EDA05529E1062400DE784D /* 세그먼트트리.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "세그먼트트리.cpp"; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				B5EDA05529E1062400DE784D /* 세그먼트트리.cpp */,
 				B5EDA05C29E10BF600DE784D /* 좌표압축과 순열사이클 분할.cpp */,
 				B548A99129E3BB920070F3F2 /* HLD_heavyLightDecomposition.cpp */,
+				B544560729E8F3EF00A2D678 /* CHT.cpp */,
+				B544560929E8F40700A2D678 /* Mex 구하기.cpp */,
 			);
 			path = Team_Note;
 			sourceTree = "<group>";
@@ -124,8 +130,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B544560829E8F3EF00A2D678 /* CHT.cpp in Sources */,
 				B5EDA05D29E10BF600DE784D /* 좌표압축과 순열사이클 분할.cpp in Sources */,
 				B548A99529E3CAA80070F3F2 /* HLD_heavyLightDecomposition.cpp in Sources */,
+				B544560A29E8F40700A2D678 /* Mex 구하기.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
