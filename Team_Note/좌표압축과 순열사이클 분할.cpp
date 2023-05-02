@@ -28,7 +28,7 @@ void compress_oneToN(vector<T> &ori, vector<T> &com ){
     int n = ori.size();
     sort(ori.begin(), ori.end());
     ori.erase(unique(ori.begin(), ori.end()), ori.end());
-    for(int i=1;i<=n;i++){
+    for(int i=1;i<n;i++){
         com[i] = lower_bound(ori.begin(), ori.end(), com[i])-ori.begin();
     }
 }

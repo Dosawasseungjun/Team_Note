@@ -3,4 +3,38 @@
    uuid = "1A5D3DBD-C3EF-40C6-B570-1679A1E0F278"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49B0184B-5666-483C-8C81-AB8EC3F8109D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Team_Note/&#x110e;&#x116c;&#x1109;&#x1169;&#x1109;&#x1173;&#x1111;&#x1162;&#x1102;&#x1175;&#x11bc;&#x1110;&#x1173;&#x1105;&#x1175;.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "main()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "353BC01E-F16D-4353-B07D-E208B73A2267"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Team_Note/&#x110e;&#x116c;&#x1109;&#x1169;&#x1109;&#x1173;&#x1111;&#x1162;&#x1102;&#x1175;&#x11bc;&#x1110;&#x1173;&#x1105;&#x1175;.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "kruskal()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
