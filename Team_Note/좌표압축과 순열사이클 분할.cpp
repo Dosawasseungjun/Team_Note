@@ -10,7 +10,7 @@ typedef tuple<int, int, int> tiii;
 
 //좌표압축(vector)  //0~n-1까지
 template<class T>
-void compress(vector<T> &ori, vector<T> &com){
+void zip(vector<T> &ori, vector<T> &com){
     int n = ori.size();
     sort(ori.begin(), ori.end());
     ori.erase(unique(ori.begin(), ori.end()), ori.end());
@@ -22,7 +22,7 @@ void compress(vector<T> &ori, vector<T> &com){
 
 //좌표압축(vector)  //1~n까지
 template<class T>
-void compress_oneToN(vector<T> &ori, vector<T> &com ){
+void zip_oneToN(vector<T> &ori, vector<T> &com ){
     const T minusINF = numeric_limits<T>().lowest();
     ori[0] = minusINF;
     int n = ori.size();
