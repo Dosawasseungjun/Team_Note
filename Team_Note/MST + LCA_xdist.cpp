@@ -35,10 +35,15 @@ struct DisjointSet{
 
 template <class T>
 struct myGraph{
-    static const int V_MAX = 1e5+1;
+    static const int V_MAX = 5e4+1;
+    static const int bit_MAX = 17;
     int V, E;
     vector<pair<T, T> > adj[V_MAX];
-    
+
+    //LCA
+    // T par[bit_MAX][V_MAX], ndist[bit_MAX][V_MAX], xdist[bit_MAX][V_MAX], dep[V_MAX];
+    T par[bit_MAX][V_MAX], xdist[bit_MAX][V_MAX], dep[V_MAX];
+
     void addEdge(T u, T v, T w){
         adj[u].push_back({v, w});
         adj[v].push_back({u, w});
@@ -68,7 +73,54 @@ struct myGraph{
         
         return ret;
     }
+
+    void dfs(T here, T parent, T d){
+        dep[here] = d ;
+        par[0][here] = parent;
+        for (auto [there, cost] : adj[here]){
+            if(there == parent) continue;
+            //ndist[0][there] = cost; xdist[0][there] = cost;  // 거리 구하고 싶을 때
+            xdist[0][there] = cost;
+            dfs(there, here, d + 1);
+        }
+    }
+
+    void setFP(){
+        dfs(1, 1, 1);
+        // ndist[0][1] = INF;
+        for(int j=1;j<bit_MAX;j++){
+            for(int i=1;i<=V;i++){
+                par[j][i] = par[j-1][par[j-1][i]];
+                // ndist[j][i] = min(ndist[j-1][i], ndist[j-1][par[j-1][i]]);
+                xdist[j][i] = max(xdist[j-1][i], xdist[j-1][par[j-1][i]]);
+            }
+        }
+    }
+
+
+    //지금은 경로의 최댓값을 구하는 과정
+    T LCA(T u, T v){
+        T ret = 0; // xdist를 구하고 싶으면 0, 아니면 INF
+        if(dep[u] < dep[v]) swap(u, v);
+        T diff = dep[u] - dep[v];
+
+        for(int i=0;i<bit_MAX;i++) if(diff & (1 << i)){
+            ret = max(ret, xdist[i][u]);
+            u = par[i][u];
+        }
+        if(u == v) return ret;
+        for(int i = bit_MAX-1;i>=0;i--) if(par[i][u] != par[i][v]){
+            ret = max(ret, xdist[i][u]);
+            u = par[i][u];
+            ret = max(ret, xdist[i][v]);
+            v = par[i][v];
+        }
+        ret = max(ret, xdist[0][u]);
+        ret = max(ret, xdist[0][v]);
+        return ret;
+    }
 };
+
 
 
 myGraph<int> G;
@@ -77,8 +129,8 @@ int main() {
     fast_io
     cin >> G.V >> G.E;
     for(int i=0;i<G.E;i++){
-        int u, v, c; cin >> u >> v >> c;
-        G.addEdge(u, v, c);
+        int u, v, w; cin >> u >> v >> w;
+        G.addEdge(u, v, w);
     }
-    cout << G.kruskal();
+    G.kruskal();
 }
