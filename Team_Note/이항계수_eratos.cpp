@@ -9,7 +9,7 @@ typedef tuple<int, int, int> tiii;
 #define yy second
 
 
-template<int SZ, ll B_MOD> struct Binomal{
+template<int SZ, ll B_MOD> struct Number_Theory{
     vector<ll> fac;
     void precal(int sz = SZ){
         fac = vector<ll> (sz+1);
@@ -20,29 +20,41 @@ template<int SZ, ll B_MOD> struct Binomal{
         }
     }
     
-    ll fastMul(ll a, ll e){
+    ll fastex(ll a, ll e){
         if(!e) return 1;
         if(e==1) return a%B_MOD;
-        ll half = fastMul(a, e/2);
+        ll half = fastex(a, e/2);
         ll ret = half*half%B_MOD;
         if(e&1) ret = (ret*a)%B_MOD;
         return ret;
     }
     
-    ll binomal(int n, int k){   // 페르마 소정리, 모듈러 곱셈 역원을 이용한 이항계수
-        return (fac[n]*fastMul(fac[n-k]*fac[k]%B_MOD, B_MOD-2))%B_MOD;
+    ll binomial(int n, int k){   // 페르마 소정리, 모듈러 곱셈 역원을 이용한 이항계수
+        return (fac[n]*fastex(fac[n-k]*fac[k]%B_MOD, B_MOD-2))%B_MOD;
     }
     
-    ll lucas_binomal(ll n, ll k, ll m){ //n, k가 크고 m은 적당할 때 fac[m]까지 만들어 두고
+    ll lucas_binomial(ll n, ll k, ll m){ //n, k가 크고 m은 적당할 때 fac[m]까지 만들어 두고
         ll res = 1;
         while(n||k){
-            res *= binomal(n%m, k%m, m);
+            res *= binomial(n%m, k%m, m);
             res %= m;
             n /= m; k/= m;
         }
         return res;
     }
+
+    ll catalan(ll n){ 
+        /*카탈란수(C_n)
+        길이가 2n인 올바른 괄호 쌍의 수
+        노드가 n+1개의 리프를 가진 풀 바이너리 트리의 수
+        n+2각형을 n개의 삼각형으로 나누는 방법의 수
+        */ 
+        
+        //return binomial(2*n, n) / (n+1)
+        return binomial(2*n, n) * fastex(n+1, B_MOD-2) % B_MOD;
+    }
 };
+
 
 template<int SZ, ll MOD> struct PrimeControl{
     vector<ll> P;
